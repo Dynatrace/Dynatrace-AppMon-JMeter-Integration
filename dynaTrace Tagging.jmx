@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.1">
+  <hashTree>
+    <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="dynaTrace Tagging" enabled="true">
+      <boolProp name="resetInterpreter">false</boolProp>
+      <stringProp name="parameters"></stringProp>
+      <stringProp name="filename"></stringProp>
+      <stringProp name="script">String NA=sampler.getName();
+String VU=ctx.getThreadGroup().getName() + ctx.getThreadNum();
+sampler.getHeaderManager().add(new org.apache.jmeter.protocol.http.control.Header(&quot;dynaTrace&quot;,&quot;PC=JMETER;NA=&quot; +NA+&quot;;VU=&quot;+VU ));
+</stringProp>
+    </BeanShellPreProcessor>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
